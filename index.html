@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Academic Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            display: flex;
+            align-items: flex-start;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .intro {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .intro a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .intro a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 1rem;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            border-bottom-color: #333;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .news-item,
+        .publication-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+        }
+
+        .date {
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .news-content,
+        .publication-content {
+            color: #555;
+        }
+
+        .news-content a,
+        .publication-content a {
+            color: #0066cc;
+            text-decoration: none;
+            font-style: italic;
+        }
+
+        .news-content a:hover,
+        .publication-content a:hover {
+            text-decoration: underline;
+        }
+
+        .more-link {
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .more-link:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #e0e0e0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-image">
+                <img src="photos/me.png" alt="Your Name">
+            </div>
+            <div class="header-content">
+                <h1>Zachary F. Mattes</h1>
+                <div class="intro">
+                    <p>I'm Zach. </p>
+                    <p>I'm a scientist at <a href="https://sapiencetherapeutics.com/">Sapience Therapeutics</a> and I work on molecular design. </p>
+                    <p>I did my PhD work at BU with Mark Grinstaff on cancer metabolism and identifying synergistic therapies.</p>
+                    <p>I work moslty in early drug discovery but have contributed across the stages of development at Sapience from hit ID to MOA omics studies.</p>
+                    <p>I'm currently interested in merging massively pooled discovery (wet-lab), AI/ML, and physics-based approaches to identify guiding principles of protein design!</p>
+
+                </div>
+            </div>
+        </header>
+
+        <nav>
+            <a href="#" class="nav-link active" data-section="home">Home</a>
+            <a href="#" class="nav-link" data-section="works">Works</a>
+            <a href="#" class="nav-link" data-section="projects">Projects</a>
+            <a href="#" class="nav-link" data-section="time">Time</a>
+            <a href="#" class="nav-link" data-section="cv">CV</a>
+            <a href="#" class="nav-link" data-section="me">Me</a>
+        </nav>
+
+        <div id="home" class="section">
+            <h2>News</h2>
+            <div class="news-item">
+                <div class="date">[2025/7] Just released my webpage !</div>
+            </div>
+            <a href="info/more.html" class="more-link">... see more here ...</a>
+        </div>
+
+        <div id="works" class="section hidden">
+            <h2>Publications</h2>
+            <div class="publication-item">
+                <div class="date">[2025]</div>
+                <div class="publication-content">
+                    <strong>The C/EBPβ antagonist peptide lucicebtide (ST101) induces macrophage polarization toward a pro-inflammatory phenotype and enhances anti-tumor immune responses.</strong><br>
+                    Scuoppo, C., Ramirez, R., Leong, S., Koester, M., Mattes, Z. F., Mendelson, K., Diehl, J., Gonzales, J., Abbate, F., Gallagher, E., Le, B., Pinto, R., Ghamsari, L., Vainstein-Haras, A., Merutka, G., Kappel, B. J., & Rotolo, J. A. <br>
+                    <em>Frontiers in Immunology</em><br>
+                    <a href="https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2025.1522699/full">[Paper]</a>
+                </div>
+            </div>
+            <div class="publication-item">
+                <div class="date">[2020]</div>
+                <div class="publication-content">
+                    <strong>Verticillin A causes apoptosis and reduces tumor burden in high-grade serous ovarian cancer by inducing DNA damage</strong><br>
+                    Salvi, A., Amrine, C. S. M., Austin, J. R., Kilpatrick, K., Russo, A., Lantvit, D., Calderon-Gierszal, E., Mattes, Z., ... & Burdette, J. E.<br>
+                    <em>Molecular cancer therapeutics</em><br>
+                    <a href="https://aacrjournals.org/mct/article-abstract/19/1/89/92815/Verticillin-A-Causes-Apoptosis-and-Reduces-Tumor?redirectedFrom=fulltext">[Paper]</a>
+                </div>
+            </div>
+            <div class="publication-item">
+                <div class="date">[2019]</div>
+                <div class="publication-content">
+                    <strong>Meroterpenoids from neosetophoma sp.: A dioxa [4.3. 3] propellane ring system, potent cytotoxicity, and prolific expression</strong><br>
+                    El-Elimat, T., Raja, H. A., Ayers, S., Kurina, S. J., Burdette, J. E., Mattes, Z., ... & Oberlies, N. H. <br>
+                    <em>Organic letters</em><br>
+                    <a href="https://pubs.acs.org/doi/10.1021/acs.orglett.8b03769">[Paper]</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="projects" class="section hidden">
+            <h2>Science & Fun</h2>
+            <div class="news-item">
+                <div class="date">[2025/07]</div>
+                <div class="news-content">Under construction ... Things to come ...</div>
+            </div>
+        </div>
+
+        <div id="time" class="section hidden">
+            <h2>Timeline</h2>
+            <div class="news-item">
+                <div class="date">[2022 - Present]</div>
+                <div class="news-content"><strong>Principal Scientist</strong> at Sapience Therapeutics</div>
+                <div class="news-content"> Peptide/mini-protein discovery (wet and dry!) and mechanism of action elucidation</div>
+            </div>
+            <div class="news-item">
+                <div class="date">[2024 - 2026]</div>
+                <div class="news-content"><strong>Master's in Data Science and Machine Learning</strong> at the University of Pennsylvania</div>
+                <div class="news-content"> Honing my software engineering skills and also my theoretical understanding of probability, statistics, and algorithmic learning</div>
+            </div>
+            <div class="news-item">
+                <div class="date">[2017 - 2022]</div>
+                <div class="news-content"><strong>PhD in Chemistry/Chemical Biology</strong> at Boston University</div>
+                <div class="news-content"> Projects spanning the gamut of | cancer molecular/cell biology and metabolism | functional genomics to identify gene therapy/novel chemotherapy combinations | organic synthesis of polymeric nanoparticles (aggregate and dendrimeric) | </div>
+            </div>
+            <div class="news-item">
+                <div class="date">[2013 - 2017]</div>
+                <div class="news-content"><strong>Bachelor's Degree in Chemistry with minors in Math and Computer Science</strong> at Fordham University</div>
+                <div class="news-content"> Crystallographic studies on mixed valence copper cyanide crystals to crystallography on the proteinaceious toxin <a href="https://www.pnas.org/doi/10.1073/pnas.1507622112">(Perforin)</a> from P. volitans (Pick your poison!)</div>
+            </div>
+            <div class="news-item">
+                <div class="date">[2009 - 2013]</div>
+                <div class="news-content"><strong>Major in Chemistry/Biology/Geology</strong> at St. John's College (Belize City)</div>
+            </div>
+        </div>
+
+        <div id="cv" class="section hidden">
+            <h2>Curriculum Vitae</h2>
+            <p>Download my full CV: <a href="info/ZacharyF.Mattes%20CV.pdf" target="_blank">[PDF]</a></p>
+            <h3 style="margin-top: 2rem;">Education</h3>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li>PhD in Chemistry/Chemical Biology, Boston University, 2022</li>
+                <li>MSE in Data Science/ML, University of Pennsylvania, 2026 (exp.)</li>
+                <li>BS in Chemistry (major), Math & Computer Science (minor), Fordham University, 2017</li>
+        </div>
+
+        <div id="me" class="section hidden">
+            <h2>~A winding  path~</h2>
+            <p>I grew up on a small island <a href="https://en.wikipedia.org/wiki/Ambergris_Caye">(Ambergris Caye)</a> in what was a fishing village <a href="https://en.wikipedia.org/wiki/San_Pedro_Town">(San Pedro Town)</a> of around 1000 people in Belize (Central America). I was born to conservationist parents who moved to Belize to start a field research station in the early 90s <a href="https://www.belizemarinetrec.com/">(Belize Tropical Research and Education Center (TREC))</a> that hosted countless universities, university professors, and their respective research programs.</p>
+            <p>Growing up in the presence of one of the most spectacular ecosystems on Earth <a href="https://en.wikipedia.org/wiki/Mesoamerican_Barrier_Reef_System">(Mesoamerican Barrier Reef System)</a> gave me the opportunity to observe the curiousities of Nature, and long discussions with my parents and the various academics we hosted taught me to appreciate it (though, I'm still working to understand it!)</p>
+            <p></p>
+            <p>Feel free to reach out if you'd like to collaborate or chat!</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://github.com/mattesz" title="GitHub" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/zachary-f-mattes-69227189/" title="LinkedIn" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </a>
+            <a href="https://scholar.google.com/citations?user=v514gz4AAAAJ&hl=en&oi=ao" title="Google Scholar" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Hide all sections
+                sections.forEach(section => section.classList.add('hidden'));
+                
+                // Show the selected section
+                const sectionId = link.getAttribute('data-section');
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add some interactive effects
+        const newsItems = document.querySelectorAll('.news-item, .publication-item');
+        newsItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(5px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>
